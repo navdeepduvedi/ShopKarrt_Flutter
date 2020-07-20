@@ -73,11 +73,7 @@ class listscreen extends StatelessWidget {
                   topRight: Radius.circular(20.0),
                 ),
               ),
-             child: ListView.builder(
-               itemBuilder: (context,index){
-                 
-               }
-               ),
+             
           ))
       ],),
     
