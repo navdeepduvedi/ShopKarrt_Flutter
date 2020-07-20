@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:shopkarrt/add_itemScreen.dart';
+import 'package:provider/provider.dart';
+import 'itemData.dart';
 class listscreen extends StatelessWidget {
   
 
@@ -13,10 +15,10 @@ class listscreen extends StatelessWidget {
         onPressed: (){
           showModalBottomSheet(
             context: context,
-            isScrollControlled: true,
+            
             builder:(context)=>SingleChildScrollView(
               child:Container(
-                
+                child: additem(),
               )
             )
             );
@@ -56,7 +58,7 @@ class listscreen extends StatelessWidget {
                     height: 10.0,
                   ),
                   Text(
-                    "13 Items",
+                    "${Provider.of<Itemdata>(context).itemCount} Items",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0
