@@ -7,6 +7,21 @@ class listscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepPurple,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.deepPurple[900],
+        child: Icon(Icons.add),
+        onPressed: (){
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            builder:(context)=>SingleChildScrollView(
+              child:Container(
+                
+              )
+            )
+            );
+        }
+        ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -50,7 +65,20 @@ class listscreen extends StatelessWidget {
               ],),
             ),
           ),
-          Column         
+          Expanded(child: Container(
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20.0),
+                  topRight: Radius.circular(20.0),
+                ),
+              ),
+             child: ListView.builder(
+               itemBuilder: (context,index){
+                 
+               }
+               ),
+          ))
       ],),
     
     );
