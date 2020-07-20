@@ -4,9 +4,7 @@ import 'dart:collection';
 
 class Itemdata extends ChangeNotifier{
 
-List<items> _item = [
-  items(name: 'Eggs 2 Dozen'),
-];
+List<items> _item = [];
 
 UnmodifiableListView<items> get item {
     return UnmodifiableListView(_item);
@@ -23,5 +21,8 @@ void updateItem(items item){
   item.toggleDone();
   notifyListeners();
 }
-
+void deleteItem(items item){
+  _item.remove(item);
+  notifyListeners();
+}
 }
