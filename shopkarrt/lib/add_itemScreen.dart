@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'itemData.dart';
-class additem extends StatelessWidget {
-  String newItem;
+class additem extends StatelessWidget {  
   @override
   Widget build(BuildContext context) {
+    String newItem;
+    var itemprovider = Provider.of<Itemdata>(context);
     return Container(
       color: Color(0xff757575),
       child: Container(
@@ -27,16 +28,16 @@ class additem extends StatelessWidget {
           ),
         ),
         TextField(
-           autofocus: true,
+           
               textAlign: TextAlign.center,
-              onChanged: (newText) {
-                newItem = newText;
+              onChanged: (value) {
+                newItem = value;
               },
 
         ),
         FlatButton(
           onPressed: () {
-            Provider.of<Itemdata>(context).addItems(newItem);
+            itemprovider.addItems(newItem);
             Navigator.pop(context);
           },
           color: Colors.deepPurple[900],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopkarrt/add_itemScreen.dart';
 import 'package:provider/provider.dart';
+import 'package:shopkarrt/listview.dart';
 import 'itemData.dart';
 class listscreen extends StatelessWidget {
   
@@ -15,9 +16,10 @@ class listscreen extends StatelessWidget {
         onPressed: (){
           showModalBottomSheet(
             context: context,
-            
+            isScrollControlled: true,
             builder:(context)=>SingleChildScrollView(
               child:Container(
+                padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
                 child: additem(),
               )
             )
@@ -75,7 +77,7 @@ class listscreen extends StatelessWidget {
                   topRight: Radius.circular(20.0),
                 ),
               ),
-             
+             child: TasksList(),
           ))
       ],),
     
