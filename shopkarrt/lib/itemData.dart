@@ -25,4 +25,9 @@ void deleteItem(items item){
   _item.remove(item);
   notifyListeners();
 }
+
+void cleanList(){
+  _item.clear();
+  notifyListeners();
+}
 }

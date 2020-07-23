@@ -8,6 +8,7 @@ class listscreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var itemProvider = Provider.of<Itemdata>(context);
     return Scaffold(
       backgroundColor: Colors.deepPurple,
       floatingActionButton: FloatingActionButton(
@@ -78,7 +79,7 @@ class listscreen extends StatelessWidget {
                 ),
               ),
              child: TasksList(),
-          ))
+          )),
       ],),
     
     );

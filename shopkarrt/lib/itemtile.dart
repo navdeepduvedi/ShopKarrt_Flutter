@@ -14,6 +14,8 @@ class itemTile extends StatelessWidget {
       title: Text(
         name,
         style: TextStyle(
+          fontSize: 20.0,
+          fontWeight: FontWeight.w600,
           decoration:isChecked?TextDecoration.lineThrough:null
         ),
       ),
