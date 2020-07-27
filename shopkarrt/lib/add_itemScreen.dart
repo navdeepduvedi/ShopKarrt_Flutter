@@ -42,37 +42,19 @@ class _additemState extends State<additem> {
               },
 
         ),
-        Row(
-          children: <Widget>[
-            FlatButton(
-              onPressed: () {
-                //print(newItem);
-                itemprovider.addItems(newItem);
-                Navigator.pop(context);
-              },
-              color: Colors.deepPurple[900],
-              child: Text(
-                'Add',
-                style: TextStyle(
-                  color:Colors.white
-                ),
-              ),
+        FlatButton(
+          onPressed: () {
+            //print(newItem);
+            itemprovider.addItems(newItem);
+            Navigator.pop(context);
+          },
+          color: Colors.deepPurple[900],
+          child: Text(
+            'Add',
+            style: TextStyle(
+              color:Colors.white
             ),
-            FlatButton(
-              onPressed: () {
-                //print(newItem);
-                itemprovider.cleanList();
-                Navigator.pop(context);
-              },
-              color: Colors.red,
-              child: Text(
-                'Clear List',
-                style: TextStyle(
-                  color:Colors.white
-                ),
-              ),
-            ),
-          ],
+          ),
         )
       ],),
       )

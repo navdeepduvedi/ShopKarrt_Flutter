@@ -11,22 +11,45 @@ class listscreen extends StatelessWidget {
     var itemProvider = Provider.of<Itemdata>(context);
     return Scaffold(
       backgroundColor: Colors.deepPurple,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepPurple[900],
-        child: Icon(Icons.add),
-        onPressed: (){
-          showModalBottomSheet(
-            context: context,
-            isScrollControlled: true,
-            builder:(context)=>SingleChildScrollView(
-              child:Container(
-                padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-                child: additem(),
-              )
-            )
-            );
-        }
-        ),
+      floatingActionButton: Stack(
+        children: <Widget>[
+          Align(
+            alignment: Alignment.bottomRight,
+            child: FloatingActionButton(
+            backgroundColor: Colors.deepPurple[900],
+            child: Icon(Icons.add),
+            onPressed: (){
+              showModalBottomSheet(
+                context: context,
+                isScrollControlled: true,
+                builder:(context)=>SingleChildScrollView(
+                  child:Container(
+                    padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+                    child: additem(),
+                  )
+                )
+                );
+            }
+            ),
+          ),
+          Align(
+            alignment : Alignment.bottomLeft,
+            child: Padding(
+              padding: const EdgeInsets.only(left:30.0),
+              child: FloatingActionButton(
+                onPressed: (){
+                  itemProvider.cleanList();
+                } ,
+                backgroundColor:Colors.red ,
+                child: Text(
+                  'Clear'
+                ),
+                ),
+            ),
+          )
+      ],
+          
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.start,
