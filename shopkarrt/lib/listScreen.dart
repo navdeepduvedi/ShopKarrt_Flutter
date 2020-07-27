@@ -38,7 +38,47 @@ class listscreen extends StatelessWidget {
               padding: const EdgeInsets.only(left:30.0),
               child: FloatingActionButton(
                 onPressed: (){
-                  itemProvider.cleanList();
+                   showDialog(
+                     context: context,
+                     child: Dialog(
+                      elevation: 20.0,
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
+                      child: Container(
+                        padding: EdgeInsets.all(20.0),
+                        height: 250.0,
+                        child: Column(children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Text(
+                              'Do you really want    to clear the list?',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30.0,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 20.0,
+                          ),
+                          FlatButton(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                            color: Colors.red,
+                            child: Text(
+                              'Yes',
+                              style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20.0,
+                            ),
+                            ) ,
+                            onPressed: (){
+                              itemProvider.cleanList();
+                              Navigator.pop(context);
+                            },
+                            )
+                        ],),
+                      ),
+                  ),
+                   );
                 } ,
                 backgroundColor:Colors.red ,
                 child: Text(
