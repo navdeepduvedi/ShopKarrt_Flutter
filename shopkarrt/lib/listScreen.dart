@@ -60,21 +60,42 @@ class listscreen extends StatelessWidget {
                           SizedBox(
                             height: 20.0,
                           ),
-                          FlatButton(
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-                            color: Colors.red,
-                            child: Text(
-                              'Yes',
-                              style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20.0,
-                            ),
-                            ) ,
-                            onPressed: (){
-                              itemProvider.cleanList();
-                              Navigator.pop(context);
-                            },
-                            )
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              FlatButton(
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                                color: Colors.red,
+                                child: Text(
+                                  'Yes',
+                                  style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                ),
+                                ) ,
+                                onPressed: (){
+                                  itemProvider.cleanList();
+                                  Navigator.pop(context);
+                                },
+                                ),
+                                SizedBox(width: 30.0,),
+                                FlatButton(
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+                                color: Colors.deepPurple,
+                                child: Text(
+                                  'No',
+                                  style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                ),
+                                ) ,
+                                onPressed: (){
+                                  
+                                  Navigator.pop(context);
+                                },
+                                ),
+                            ],
+                          )
                         ],),
                       ),
                   ),
